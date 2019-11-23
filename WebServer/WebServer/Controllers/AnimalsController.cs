@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebServer.Data;
 using WebServer.DTO;
 
 namespace WebServer.Controllers
@@ -13,25 +14,30 @@ namespace WebServer.Controllers
     //[ApiController]
     public class AnimalsController : ControllerBase
     {
+        private readonly ApplicationDbContext _dbContext;
+        public AnimalsController(ApplicationDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
         //api/animals
         [HttpGet]
         public IActionResult GetAnimals()
         {
-            List<AnimalDTO> model = new List<AnimalDTO>();
-            model.Add(new AnimalDTO()
+            List<AnimalDTO> model = _dbContext.Animals.Select(x => new AnimalDTO()
             {
-                Name = "Boria",
-                Bread = "Manul",
-                DateBirth = "12.12.2018",
-                Image = "https://images.earthtouchnews.com/media/179015/06_02_2014_manul_Pallass-cat_1.jpg"
-            });
-            model.Add(new AnimalDTO()
-            {
-                Name = "Oksana",
-                Bread = "Russian Blue",
-                DateBirth = "07.01.2017",
-                Image = "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/06/cat-217679.jpg?h=c4ed616d&itok=3qHaqQ56"
-            });
+                Name = x.Name,
+                Bread = x.Bread,
+                DateBirth = x.DateBirth.ToString(),
+                Image = x.Image
+            }).ToList();
+
+            //model.Add(new AnimalDTO()
+            //{
+            //    Name = "Oksana",
+            //    Bread = "Russian Blue",
+            //    DateBirth = "07.01.2017",
+            //    Image = "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2018/06/cat-217679.jpg?h=c4ed616d&itok=3qHaqQ56"
+            //});
             return Ok(model);
         }
     }

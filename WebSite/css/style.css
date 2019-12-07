@@ -1,0 +1,31 @@
+body {
+    background: url('/Images/background.jpg') #000000 no-repeat top center;
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    background-color: white;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+.wrapper h1 {
+    margin: 0;
+    padding: 0;
+}
+.wrapper h2 {
+    margin: 0;
+    padding: 0;
+}
+.wrapper > .left-panel {
+    background-color: yellow;
+    float: left;
+    min-width: 300px;
+}
+.wrapper > .content {
+    background-color: lightblue; 
+}
+.navbar {
+    background-color: #12efff71;
+}

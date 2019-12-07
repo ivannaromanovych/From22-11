@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Dialog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    window.onload = function () {
+        //alert("Hello! Nice to see you :)");
+        var counter = 4;
+        var eventHandler = setInterval(function(){
+            counter = tick_tack(counter, eventHandler);
+        }, 1000);
+
+        var items = document.getElementsByClassName("close_dialog");
+        for (let i = 0; i < items.length; i++) {
+            items[i].onclick = close_dialog;
+        }
+
+    };
+    //show greeting dialog
+    function show_dialog() {
+        var dlg = document.getElementById("happy_dialog");
+        dlg.style.display = "block";
+    }
+    function close_dialog() {
+        var dlg = document.getElementById("happy_dialog");
+        dlg.style.display = "none";
+    }
+
+    function tick_tack(count, eventHandler) {
+        var my_ticker = document.getElementById("tick_bomb")
+        my_ticker.innerHTML = count;
+        if (count <= 0) {
+            clearInterval(eventHandler); //cancel timer
+            show_dialog();
+
+        }
+        return --count;
+    }
+
+</script>
+
+<body>
+    <h1>
+        Hello Peter------------------ <span id="tick_bomb">5</span>
+    </h1>
+    <h1>
+        Hello Peter------------------
+    </h1>
+    <h1>
+        Hello Peter------------------
+    </h1>
+    <div id="happy_dialog" class="dialog">
+        <div class="header">
+            <div class="title">
+                Happy New Year
+            </div>
+            <div class="btn-close close_dialog">
+                &times;
+            </div>
+        </div>
+        <div class="content">
+            <span>Hello</span>
+            <h1>Hello</h1>
+            <h3>Hello</h3>
+            <h2>Hello my friend.</h2>
+        </div>
+        <div class="footer">
+            <hr />
+            <div class="buttons close_dialog">
+                <a href="#" class="danger">Want</a>
+                <a href="#">Later</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

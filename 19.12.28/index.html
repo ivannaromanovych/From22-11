@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Приват банк відділення</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/eclipse.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="formSearch">
+            <div class="form-row align-items-center">
+                <div class="col-9 my-1">
+                    <input type="text" class="form-control" id="txtSearch" placeholder="Jane Doe">
+                </div>
+                <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary">Пошук</button>
+                </div>
+            </div>
+        </form>
+        <div id="content">
+            <div class="card">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Переглянути</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            console.log('window load');
+
+            let formSearch = document.getElementById("formSearch");
+
+            formSearch.onsubmit = function (e) {
+                e.preventDefault(); //скасовує стандартне поведінку форми
+                let textSearch = document.getElementById("txtSearch").value;
+                sendServerSearch(textSearch);
+                console.log('------Search------', textSearch);
+            }
+
+            function sendServerSearch(search) {
+                var urlPrivat = `https://api.privatbank.ua/p24api/pboffice?json= &city=${search}`;
+                // 1. Создаём новый объект XMLHttpRequest
+                var xhr = new XMLHttpRequest();
+
+                // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
+                xhr.open('GET', urlPrivat, true);
+
+                // 3. Отсылаем запрос
+                xhr.send();
+
+                xhr.onreadystatechange = function () { // (3)
+                    if (xhr.readyState != 4) return;
+
+                    //button.innerHTML = 'Готово!';
+
+                    if (xhr.status != 200) {
+                        console.log(xhr.status + ': ' + xhr.statusText);
+                        //alert(xhr.status + ': ' + xhr.statusText);
+                    } else {
+                        //console.log(xhr.responseText);
+                        let array = JSON.parse(xhr.responseText);
+                        let content = document.getElementById('content');
+                        let contentStr = "";
+                        for (let i = 0; i < array.length; i++) {
+                            contentStr += `<div class="card">
+                <div class="card-header">
+                    ${array[i].name}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${array[i].address}</h5>
+                    <p class="card-text">${array[i].phone}</p>
+                    <a href="#" class="btn btn-primary">Переглянути</a>
+                </div>
+            </div>
+                        `;
+                        }
+                        content.innerHTML = contentStr;
+                        console.log(array.length);
+                        //alert(xhr.responseText);
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -10,9 +10,7 @@ namespace _2020_02_01Baton.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
-        {
-            List<ProductModel> models = new List<ProductModel>()
+        private static List<ProductModel> models = new List<ProductModel>()
             {
                 new ProductModel
                 {
@@ -33,11 +31,44 @@ namespace _2020_02_01Baton.Controllers
                     Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0aqLgAng2IFhFZI93UBdiYnDNNtCTaNwGDw2IBYjeDl8g_Btz"
                 }
             };
+        public ActionResult Index()
+        {
             return View(models);
         }
         public ActionResult About()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Add(ProductAddModel model)
+        {
+            ProductModel product = new ProductModel()
+            {
+                Id = models.Count + 1,
+                Name = model.Name,
+                Image = model.Image
+            };
+            models.Add(product);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            ProductModel product = models.FirstOrDefault(x => x.Id == id);
+            if (product != null)
+                models.Remove(product);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            ProductModel product = models.FirstOrDefault(x => x.Id == id);
+            return View(product);
         }
     }
 }

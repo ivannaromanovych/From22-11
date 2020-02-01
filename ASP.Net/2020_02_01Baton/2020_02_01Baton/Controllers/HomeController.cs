@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2020_02_01Baton.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,11 +12,32 @@ namespace _2020_02_01Baton.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            List<ProductModel> models = new List<ProductModel>()
+            {
+                new ProductModel
+                {
+                    Id = 1,
+                    Name = "Borodynsky bread",
+                    Image = "https://e0.edimdoma.ru/data/recipes/0010/4258/104258-ed4_wide.jpg?1504767598"
+                },
+                new ProductModel
+                {
+                    Id = 2,
+                    Name = "Croissant",
+                    Image = "https://img.delicious.com.au/RzgR3kXD/w1200/del/2015/12/cornetti-italian-croissants-24713-1.jpg"
+                },
+                new ProductModel
+                {
+                    Id = 3,
+                    Name = "Baget",
+                    Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0aqLgAng2IFhFZI93UBdiYnDNNtCTaNwGDw2IBYjeDl8g_Btz"
+                }
+            };
+            return View(models);
         }
-        public string About()
+        public ActionResult About()
         {
-            return "This is method about";
+            return View();
         }
     }
 }

@@ -1,0 +1,115 @@
+body {
+    font-family: Arial;
+    padding: 0px;
+    margin: 0px;
+}
+.header{
+    background-color: rgb(204, 40, 204);
+}
+.header .content{
+    position: relative;
+    height: 100px;
+}
+.header .content a{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    margin-left: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.header-menu{
+    background-color: purple;
+}
+.header-menu .content-menu{
+    position: relative;
+    height: 70px;
+    margin-top: 10px;
+}
+.header-menu .content-menu a{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    margin-left: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.menu{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.menu .content{
+    overflow: hidden;
+    margin-right: 10px;
+}
+.menu .leftt{
+    float: left;
+    width: 25%;
+    margin-right: 5px;
+}
+.menu .leftt div{
+    background-color: rgb(204, 40, 204);
+    margin-bottom: 4px;
+    padding: 40px;
+    position: relative;
+}
+.menu .leftt .first{
+    height: 40px;
+    padding-top: 40px;
+}
+.menu .leftt .second{
+    height: 80px;
+    padding-top: 40px;
+}
+.menu .leftt div a{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.menu .centrall{
+    background:  rgb(204, 40, 204);
+    float: left;
+    width: 54%;
+    height: 350px;
+    overflow: hidden;
+}
+.menu .centrall h1{
+    padding-left: 40px;
+    color: white;
+}
+.menu .centrall .section{
+    background: rgb(231, 130, 231);
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    height: 90px;
+    padding-left: 80px;
+    padding-top: 10px;
+}
+.menu .centrall .section a{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.menu .rightt{
+    background-color: rgb(204, 40, 204);
+    width: 20%;
+    float: right;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    margin-left: 2px;
+}
+.menu .rightt a{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}

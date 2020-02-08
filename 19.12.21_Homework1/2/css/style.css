@@ -1,0 +1,13 @@
+
+div{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+}
+.button{
+    background: red;
+    width: 100px;
+    height: 75px;
+    margin: 50px;
+}

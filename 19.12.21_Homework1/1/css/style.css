@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(210, 230, 255);
+    font-size: 20px;
+    text-align: center;
+}
+div{
+    margin: 0px;
+}
+button{
+    background-color: rgb(210, 230, 255);
+    width: 100px;
+}
+input{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    align-items: center;
+    width: 200px;
+    background: rgb(210, 230, 255);
+    height: 30px;
+    padding: 2px;
+}
+.profile{
+    color: rgb(0, 115, 255);
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+.url{
+    font-size: 10px;
+    text-align: center;
+}
+.ori{
+    padding: 0px;
+    margin: 5px;
+}
+.loading{
+    display: none;
+    background: #aed0f0;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    top: 0px;
+}
+.animation{
+    transform: translate(0, 500%)
+}

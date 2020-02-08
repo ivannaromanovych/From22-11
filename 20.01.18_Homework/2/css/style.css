@@ -1,0 +1,17 @@
+img{
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+.nav-item a{
+    float: left;
+}
+.nav-item{
+    background: rgb(97, 96, 96);
+}
+
+.nav-item:hover{
+    background: rgb(70, 69, 69);
+}

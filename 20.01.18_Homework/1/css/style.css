@@ -1,0 +1,42 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box div{
+    display:inline-block;
+    margin: 5px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    align-items: center;
+    padding: 5px;
+    width: 120px;
+    height: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 14px;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+.container{
+    margin: 0px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}

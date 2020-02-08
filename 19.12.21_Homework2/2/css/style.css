@@ -1,0 +1,18 @@
+p{
+    font-family: Calibri;
+    font-size: 30px;
+}
+span{
+    font-family: Calibri;
+    background-color: rgb(233, 233, 225);
+    margin: 0px;
+    margin-right: 4px;
+    font-size: 60px;
+    padding: 0px 10px;
+}
+.black{
+    color: black;
+}
+.red{
+    color: red;
+}

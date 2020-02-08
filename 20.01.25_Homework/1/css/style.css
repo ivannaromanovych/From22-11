@@ -1,0 +1,43 @@
+.row{
+    width: 600px;
+    border-radius: 10px;
+    background: url("/images/FonCard.jpg");
+    padding-left: inherit;
+}
+.baner{
+    background-color: brown ;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: -50px;
+    padding-left: 50px;
+    margin-bottom: 20px; 
+    height: 45px; 
+    padding-top: 10px;
+}
+.date{
+    width: 100px;
+    margin-right: 10px;
+    float: left;
+}
+.cvv{
+    width: 100px;
+    margin-right: 0px;
+}
+.mar{
+    margin-right: 120px;
+}
+label{
+    margin-bottom: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+.form-control{
+    margin-top: 0px;
+    border-bottom: 3px solid brown;
+}
+.form{
+    width: 320px;
+    height: 360px;
+}

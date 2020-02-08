@@ -1,0 +1,153 @@
+body {
+    padding: 50px;
+    margin: 0px;
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+h2{
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.my{
+    width: 900px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.width{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.my .content{
+    overflow: hidden;
+}
+.my .leftt{
+    float: left;
+    width: 50%;
+}
+.width1{
+    margin-left: 20px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: relative;
+}
+.width2{
+    margin-left: 20px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: relative;
+}
+.my .leftt img{
+    padding-top: 0px;
+    float: left;
+    margin-right: 5px;
+}
+.width1 input{
+    font-size: 14px;
+    padding-left: 10px;
+    width: 86%;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+.width2 input{ 
+    font-size: 14px;
+    padding-left: 10px;
+    width: 41%;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+.width2 select{ 
+    font-size: 14px;
+    padding-left: 10px;
+    width: 42%;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+.my .rightt{
+    width: 50%;
+    float: right;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+.width .check{
+    margin-left: 20px;
+}
+.width label{
+    margin-left: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    float: right;
+    margin-top: 50px;
+    margin-left: 50%;
+    transform: translate(-20%, 0%);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color: teal;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+@media screen and (max-width: 900px){
+    .my{
+        width: 600px;
+    }
+    .my .leftt{
+        float: left;
+        width: 100%;
+    }
+    
+    .my .rightt{
+        float: left;
+        width: 100%;
+    }
+    .width1{
+        width: 100%;
+    }
+    .width2{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+    .my{
+        width: 500px;
+    }
+    .width{
+        width: 100%;
+    }
+    
+    .width1{
+        width: 94%;
+    }
+    .leftt .width2 input{
+        float: left;
+        width: 81%;
+        margin-bottom: 20px;
+    }
+    .leftt .width2 .cp{
+        margin-left: 26px;
+    }
+    .rightt .width2 input{
+        float: left;
+        width: 87%;
+        margin-bottom: 20px;
+    }
+    .rightt .width2 select{
+        float: left;
+        width: 88%;
+        margin-bottom: 20px;
+    }
+}

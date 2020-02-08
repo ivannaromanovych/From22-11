@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/eclipse.css">
+    <link href="/node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1 class="mt-3 text-center">
+        Галерея
+    </h1>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/node_modules/lightbox2/dist/js/lightbox.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            let request = new XMLHttpRequest();
+            request.open("GET", "gallery.json");
+            request.responseType = "text";
+            request.send();
+            request.onload = function () {
+                const images = JSON.parse(request.response);
+                let tmp = images["gallery"];
+                let div0 = document.createElement("div");
+                div0.className = "container";
+                let div = document.createElement("div");
+                div.className = "row";
+                for (let i = 0; i < tmp.length; i++) {
+                    let div1 = document.createElement("div");
+                    div1.className = "col-md-4 col-lg-3";
+                    let div2 = document.createElement("div");
+                    div2.className = "card w-auto p-3";
+                    let a = document.createElement("a");
+                    a.href = tmp[i].smile;
+                    a.dataset.lightbox = "example-set";
+                    a.title = tmp[i].name;
+                    let img = document.createElement("img");
+                    img.className = "card-img-top";
+                    img.src = tmp[i].fullsize;
+                    div2.append(a);
+                    a.appendChild(img);
+                    div1.appendChild(div2);
+                    div.append(div1);
+                    div0.appendChild(div);
+                }
+                document.body.append(div0);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork№07-1</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/eclipse.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <form id="formRegister" class="form">
+                <div class="baner">
+                    <label>CREDIT CARD DETAILS</label>
+                </div>
+                <div class="form-group">
+                    <label for="cardNamber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNamber">
+                </div>
+
+                <div class="form-group">
+                    <label for="text">Name On Card</label>
+                    <input type="text" class="form-control" id="name">
+
+                </div>
+                <div class="form-group">
+                    <label class="mar" for="text">Expiry Date</label>
+                    <label for="password">CVV / CVN</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control date" id="month">
+                    <input type="text" class="form-control date" id="year">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control cvv" id="cvv">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="node_modules/inputmask/dist/jquery.inputmask.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            let card = $("#cardNamber");
+            card.inputmask("9999 9999 9999 9999");
+
+            let cardM = $("#month");
+            cardM.inputmask("99");
+
+            let cardY = $("#year");
+            cardY.inputmask("2099");
+
+            let cardC = $("#cvv");
+            cardC.inputmask("999");
+        });
+    </script>
+</body>
+
+</html>

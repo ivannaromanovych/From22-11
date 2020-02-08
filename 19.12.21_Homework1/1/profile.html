@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="profile">
+    <div id="load" class="loading">
+        <img class="animation" src="images/ball-triangle.svg" />
+    </div>
+    <div>
+        <h1>User information</h1>
+        <img src="/Images/contact.png" width="150">
+        <div class="profile">
+            <label class="profile" name="name">Name </label>
+            <input class="input" type="text" name="Name" placeholder="Name"></br>
+            <label class="profile" name="surname"> Surname</label>
+            <input class="input" type="text" name="Surname" placeholder="Surname"></br>
+            <label class="profile" name="phone">Phone-number</label>
+            <input class="input" type="text" name="Phone-number" placeholder="Phone-number"></br>
+            <label class="profile" name="email">Email-adress</label>
+            <input class="input" type="email" name="email" placeholder="Email-adress"></br>
+            <label class="profile" name="birthday">Birthday</label>
+            <input class="input" type="date" name="Birthday" placeholder="Birthday"></br>
+    
+        </div>
+        <button>Edit</button>
+        <a href="index.html">
+            <button>Home</button>
+        </a>
+    </div>
+    <script>
+        window.onload = function () {
+            login();
+            setTimeout(function () {
+                var log = document.getElementById("load");
+                log.style.display = "none";
+            }, 3000);
+        }
+        function login() {
+            var log = document.getElementById("load");
+            log.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+.container{
+    background: rgb(209, 207, 207);
+}
+.form-control{
+    width: 200px;
+    margin-right: 5px;
+    float: left;
+}
+h5{
+    padding-top: 10px;
+}
+.chekRadioBox{
+    margin-left: -23px;
+    padding-left: 0px;
+}
+.chekRadioBox div{
+    float: left;
+    margin-right: 50px;
+}
+.chekBox{
+    float: left;
+    margin-right: 50px;
+}
+.buttons{
+    margin-left: -23px;
+}
+.btn-disable{
+    background: grey;
+}
+.btn-radio{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+textarea{
+    width: 500px;
+    height: 150px;
+    margin-left: -23px;
+    margin-bottom: 20px;
+}
+.custom-switch .custom-control-label::after {
+    top: calc(0.25rem + 2px);
+    left: calc(-2.25rem + 2px);
+    width: calc(1rem - 4px);
+    height: calc(1rem - 4px);
+    background-color: green;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  }
+  
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: red;
+    border-color: red;
+    background-color: red;
+}
+.chekRadioBox .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: green;
+    background-color: green;
+}

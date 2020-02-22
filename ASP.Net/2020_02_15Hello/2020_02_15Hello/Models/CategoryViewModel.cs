@@ -15,4 +15,13 @@ namespace _2020_02_15Hello.Models
 
         public virtual string Description { get; set; }
     }
+    public class CategoryItemViewModel
+    {
+        public int Id { get; set; }
+        [Display(Name = "Title of category")]
+        public virtual string Name { get; set; }
+        [Display(Name = "url-link")]
+        public virtual string UrlSlug { get; set; }
+    }
+
 }

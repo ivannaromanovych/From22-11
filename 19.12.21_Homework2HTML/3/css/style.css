@@ -1,0 +1,23 @@
+body div{
+    font-family: Arial;
+    
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+span{
+    background-color: rgb(194, 203, 207);
+    color: rgb(101, 155, 129);
+    margin: 0px;
+    margin-right: 3px;
+    font-size: 12px;
+}
+img{
+    width: 100%;
+}
+code{
+    color: red;
+}

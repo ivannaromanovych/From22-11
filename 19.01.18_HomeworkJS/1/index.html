@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork№03_1</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            let car = {
+                vendor: "Vaz",
+                model: "Slavuta",
+                year: "2005",
+                speed: 180
+            };
+            console.log(car.vendor + " " + car.model + ", " + car.year + " year, " + car.speed + " km/h.");
+            let distance = +prompt("Enter kilometers:");
+            let race = myCarRace(distance);
+            function myCarRace(distance) {
+                let tmp = distance / car.speed;
+                let time = tmp * 60;
+                if (time > 240) {
+                    let t = time / 240;
+                    time += parseInt(t) * 60;
+                    return time;
+                }
+                else
+                    return time;
+            };
+            console.log("Auto " + car.vendor + " " + car.model + ", of " + car.year +
+                " year, average speed " + car.speed + " km/h. Can ride " +
+                distance + " km for " + parseInt(race / 60) + " h. " + (parseInt(((race / 60) - parseInt(race / 60)) * 100)) + " m.");
+        };
+    </script>
+</body>
+
+</html>

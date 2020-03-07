@@ -32,16 +32,20 @@ namespace _2020_02_15Hello.Controllers
         [HttpPost]
         public ActionResult Create(CategoryCreateViewModel model)
         {
-            ApplicationDbContext context = new ApplicationDbContext();
-            Category category = new Category()
+            if (ModelState.IsValid)
             {
-                Name = model.Name,
-                UrlSlug = model.UrlSlug,
-                Description = model.Description
-            };
-            context.Categories.Add(category);
-            context.SaveChanges();
-            return RedirectToAction("index");
+                ApplicationDbContext context = new ApplicationDbContext();
+                Category category = new Category()
+                {
+                    Name = model.Name,
+                    UrlSlug = model.UrlSlug,
+                    Description = model.Description
+                };
+                context.Categories.Add(category);
+                context.SaveChanges();
+                return RedirectToAction("index");
+            }
+            return View(model);
         }
     }
 }

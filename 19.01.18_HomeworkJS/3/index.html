@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork№03_3</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            let time = new Date();
+            console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+            time = timeSeconds(time);
+            console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+            time = timeMinutes(time);
+            console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+            time = timeHours(time);
+            console.log(time);
+
+            function timeSeconds(time) {
+                let tmp = +prompt("Enter amount of second to change time:");
+                time.setSeconds(time.getSeconds()+tmp);
+                return time;
+            };
+            function timeMinutes(time) {
+                let tmp = +prompt("Enter amount of minutes to change time:");
+                time.setMinutes(time.getMinutes()+tmp);
+                return time;
+            };
+            function timeHours(time) {
+                let tmp = +prompt("Enter amount of hours to change time:");
+                time.setHours(time.getHours()+tmp);
+                return time;
+            };
+        };
+    </script>
+</body>
+
+</html>

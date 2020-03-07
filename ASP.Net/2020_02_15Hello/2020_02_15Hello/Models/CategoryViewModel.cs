@@ -9,8 +9,10 @@ namespace _2020_02_15Hello.Models
     public class CategoryCreateViewModel
     {
         [Display(Name="Title of category")]
+        [Required(ErrorMessage ="Name-field is required")]
         public virtual string Name { get; set; }
         [Display(Name="url-link")]
+        [Required(ErrorMessage = "Url-field is required")]
         public virtual string UrlSlug { get; set; }
 
         public virtual string Description { get; set; }

@@ -1,0 +1,28 @@
+﻿@model HomeWorkCRUD.Models.ProductModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>Do you really want to remove</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dd>
+            <img src="@Model.Image" />
+        </dd>
+
+    </dl>
+</div>
+
+<form action="@Url.Action("Delete", "Home")" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="submit" class="btn btn-danger" value="Yes" />
+    <a href="@Url.Action("Index", "Home")" class="btn btn-success">No</a>
+</form>

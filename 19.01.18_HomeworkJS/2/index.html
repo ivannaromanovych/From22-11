@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork№03_2</title>
+</head>
+
+<body>
+
+    <script>
+        window.onload = function () {
+            let fractionA = {
+                numerator: +prompt("Enter denominator of the first fraction:"),
+                denominator: +prompt("Enter numerator of the first fraction:")
+            };
+            let fractionB = {
+                numerator: +prompt("Enter denominator of the second fraction:"),
+                denominator: +prompt("Enter numerator of the first fraction:")
+            };
+
+            let rez = additions(fractionA, fractionB)
+            console.log(rez.numerator + "/" + rez.denominator);
+            rez = subtraction(fractionA, fractionB)
+            console.log(rez.numerator + "/" + rez.denominator);
+            rez = multiplications(fractionA, fractionB)
+            console.log(rez.numerator + "/" + rez.denominator);
+            rez = divisions(fractionA, fractionB)
+            console.log(rez.numerator + "/" + rez.denominator);
+            rez = reductions(rez)
+            console.log(rez.numerator + "/" + rez.denominator);
+
+            function additions(a, b) {
+                return rezult = {
+                    numerator: (a.numerator * b.denominator) + (b.numerator * a.denominator),
+                    denominator: a.denominator * b.denominator
+                };
+            };
+            function subtraction(a, b) {
+                return rezult = {
+                    numerator: (a.numerator * b.denominator) - (b.numerator * a.denominator),
+                    denominator: a.denominator * b.denominator
+                };
+            };
+            function multiplications(a, b) {
+                return rezult = {
+                    numerator: a.numerator * b.numerator,
+                    denominator: a.denominator * b.denominator
+                };
+            };
+            function divisions(a, b) {
+                return rezult = {
+                    numerator: a.numerator * b.denominator,
+                    denominator: a.denominator * b.numerator
+                };
+            };
+            function reductions(a) {
+                for (let i = 2; i <= a.numerator; i++) {
+                    if (a.numerator % i === 0 && a.denominator % i === 0)
+                        return rezult = {
+                            numerator: a.numerator / i,
+                            denominator: a.denominator / i
+                        };
+                    else
+                        return rezult = {
+                            numerator: a.numerator,
+                            denominator: a.denominator
+                        };
+                }
+            };
+        };
+    </script>
+
+</body>
+
+</html>

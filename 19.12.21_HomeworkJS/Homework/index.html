@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- add styles mocha to display results -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <!-- add mocha framework-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+        // turn on the test mode in the style of BDD
+        mocha.setup('bdd');
+    </script>
+    <!-- add chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // chai is giving great number of functiond. Declare assert globally
+        let assert = chai.assert;
+    </script>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        function pow(x, n) {
+            if (n < 0) return NaN;
+            if (Math.round(n) != n) return NaN;
+
+            let result = 1;
+
+            for (let i = 0; i < n; i++) {
+                result *= x;
+            }
+
+            return result;
+        }
+    </script>
+
+    <!-- script with specification (describe, it...) -->
+    <script src="/js/test.js"></script>
+
+    <!-- element with id="mocha" will contain results of tests -->
+    <div id="mocha"></div>
+
+    <!-- begining the tests -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+
+</html
